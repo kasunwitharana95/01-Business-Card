@@ -18,6 +18,7 @@
         box-sizing: border-box;
         font-family: "Questrial", sans-serif;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         height: 100vh;
@@ -27,19 +28,25 @@
         background-color: #16453e;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        /* justify-content: center;
+        align-items: center; */
         height: 520px;
         width: 320px;
+        overflow: hidden;
         -webkit-box-shadow: 10px 29px 51px -22px rgba(22, 69, 62, 1);
         -moz-box-shadow: 10px 29px 51px -22px rgba(22, 69, 62, 1);
         box-shadow: 10px 29px 51px -22px rgba(22, 69, 62, 1);
         border-radius: 7px;
         transition: transform 0.3s ease-in-out;
+        position: relative;
       }
 
       .business-card:hover {
         transform: scale(1.05);
+      }
+
+      .business-card:hover .skill-card {
+        height: 100%;
       }
 
       img {
@@ -87,6 +94,38 @@
         text-align: center;
         padding: 10px 0;
       }
+
+      .skill-card {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.3);
+        width: 100%;
+        top: 60px;
+        height: 0%;
+        backdrop-filter: blur(40px);
+        overflow: hidden;
+        transition: height 0.5s ease-in-out;
+      }
+
+      .skill-title {
+        margin-left: 90px;
+        margin-bottom: 30px;
+        font-size: 40px;
+        margin-top: 70px;
+        letter-spacing: -2px;
+        font-weight: bold;
+      }
+
+      .skill-card ul {
+        margin-left: 50px;
+        list-style: none;
+        border-left: 1px solid #d2ee82;
+      }
+
+      .skill-card li {
+        font-size: 28px;
+        margin-bottom: 20px;
+        letter-spacing: -1.5px;
+      }
     </style>
   </head>
   <body>
@@ -106,6 +145,16 @@
           <a href="Facebook">Facebook</a>
           <a href="Github">Github</a>
         </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-title">My Skills</div>
+        <ul>
+          <li>React JS</li>
+          <li>Python</li>
+          <li>Next JS</li>
+          <li>Gatsby JS</li>
+        </ul>
       </div>
     </div>
   </body>
